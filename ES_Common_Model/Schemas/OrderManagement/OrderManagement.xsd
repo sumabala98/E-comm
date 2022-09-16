@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/OrderManagement" xmlns:tns="http://www.example.org/OrderManagement" elementFormDefault="qualified">
+
+    <element name="CreateOrder_request"
+    	type="tns:CreateOrder_requestType">
+    </element>
+
+    <element name="CreateOrder_response"
+    	type="tns:CreateOrder_responseType">
+    </element>
+    
+    <complexType name="CreateOrder_requestType">
+    	<sequence>
+    		<element name="ORDER_ID" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="CUSTOMER_ID" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="PRODUCT_ID" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="QUANTITY" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="LIST_PRICE" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="DISCOUNT" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="ORDER_STATUS" type="integer" maxOccurs="1" minOccurs="1"></element>
+    		<element name="ORDER_DATE" type="date" maxOccurs="1" minOccurs="1"></element>
+    		<element name="REQUIRED_DATE" type="date" maxOccurs="1" minOccurs="1"></element>
+    		<element name="SHIPPED_DATE" type="date" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Session_id" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="CreateOrder_responseType">
+    	<sequence>
+    		<element name="ORDER_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Res_message" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="UpdateOrder_Request"
+    	type="tns:UpdateOrder_RequestType">
+    </element>
+    
+    <element name="Updateorder_response"
+    	type="tns:UpdateOrder_ResponseType">
+    </element>
+    
+    <complexType name="UpdateOrder_RequestType">
+    	<sequence>
+    		<element name="ORDER_ID" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="CUSTOMER_ID" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="PRODUCT_ID" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="QUANTITY" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="LIST_PRICE" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="DISCOUNT" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="ORDER_STATUS" type="int" maxOccurs="1" minOccurs="1"></element>
+    		<element name="ORDER_DATE" type="date" maxOccurs="1" minOccurs="1"></element>
+    		<element name="REQUIRED_DATE" type="date" maxOccurs="1" minOccurs="1"></element>
+    		<element name="SHIPPED_DATE" type="date" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="UpdateOrder_ResponseType">
+    	<sequence>
+    		<element name="Res_message" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="ORDER_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="CancelOrder_Request"
+    	type="tns:CancelOrder_RequestType">
+    </element>
+    
+    <element name="CancelOrder_response"
+    	type="tns:CancelOrder_ResponseType">
+    </element>
+    
+    <complexType name="CancelOrder_RequestType">
+    	<sequence>
+    		<element name="ORDER_ID" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Session_id" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="CancelOrder_ResponseType">
+    	<sequence>
+    		<element name="ORDER_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Res_Message" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="GetOrder_Request" type="tns:GetOrder_RequestType"></element>
+
+    <element name="GetOrder_Response"
+    	type="tns:GetOrder_ResponseType">
+    </element>
+    
+    <complexType name="GetOrder_RequestType">
+    	<sequence>
+    		<element name="ORDER_ID" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="Session_id" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="GetOrder_ResponseType">
+    	<sequence>
+    		<element name="OrderDetails" type="tns:OrderDetailsType"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="Res_message" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="GetOrderHistory_Request"
+    	type="tns:GetOrderHistory_RequestType">
+    </element>
+    
+    <element name="GetOrderHistory_Response"
+    	type="tns:GetOrderHistory_ResponseType">
+    </element>
+    
+    <complexType name="GetOrderHistory_RequestType">
+    	<sequence>
+    		<element name="CUSTOMER_ID" type="string" maxOccurs="1"
+    			minOccurs="1">
+    		</element>
+    		<element name="Session_id" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <complexType name="GetOrderHistory_ResponseType">
+    	<sequence>
+    		<element name="OrderDetails" type="tns:OrderDetailsType"
+    			maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    		<element name="Res_Message" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="OrderDetails" type="tns:OrderDetailsType"></element>
+    
+
+    <complexType name="OrderDetailsType">
+    	<sequence>
+    		<element name="ORDER_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="CUSTOMER_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="PRODUCT_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="QUANTITY" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="LIST_PRICE" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="DISCOUNT" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ORDER_STATUS" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="ORDER_DATE" type="date" maxOccurs="1" minOccurs="0"></element>
+    		<element name="REQUIRED_DATE" type="date" maxOccurs="1" minOccurs="0"></element>
+    		<element name="SHIPPED_DATE" type="date" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

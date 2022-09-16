@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/UserOnBoarding" elementFormDefault="qualified" targetNamespace="http://www.example.org/UserOnBoarding">
+
+    <element name="CreateAccount_Request" type="tns:CreateAccount_RequestType">
+    </element>
+    
+    <complexType name="CreateAccount_RequestType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="1" name="CUSTOMER_ID" type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="FIRST_NAME" type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="LAST_NAME" type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="0" name="PHONE" type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="EMAIL" type="string">
+    		</element>
+    		<element maxOccurs="1" minOccurs="0" name="PASSWORD" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="STREET" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="CITY" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="STATE" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="ZIP_CODE" type="string"/>
+
+    	</sequence>
+    </complexType>
+    
+    <element name="CreateAccount_Response" type="tns:CreateAccount_ResponseType">
+    </element>
+    
+    <complexType name="CreateAccount_ResponseType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="Res_Message" type="string"/>
+
+    	</sequence>
+    </complexType>
+
+    <element name="UpdateAccount_Request" type="tns:UpdateAccount_RequestType">
+    </element>
+    
+    <complexType name="UpdateAccount_RequestType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="1" name="CUSTOMER_ID" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="FIRST_NAME" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="LAST_NAME" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="PHONE" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="EMAIL" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="PASSWORD" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="STREET" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="CITY" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="STATE" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="ZIP_CODE" type="string"/>
+
+    	</sequence>
+    </complexType>
+    
+    <element name="UpdateaAccount_Response" type="tns:UpdateAccount_ResponseType">
+    </element>
+    
+    <complexType name="UpdateAccount_ResponseType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="Res_Message" type="string"/>
+
+    	</sequence>
+    </complexType>
+
+    <element name="GetAccountDetails_Request" type="tns:GetAccountDetails_RequestType">
+    </element>
+    
+    <complexType name="GetAccountDetails_RequestType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="1" name="CUSTOMER_ID" type="string">
+    		</element>
+
+    	</sequence>
+    </complexType>
+    
+    <element name="GetAccountDetails_Response" type="tns:GetAccountDetails_ResponseType">
+    </element>
+    
+    <complexType name="GetAccountDetails_ResponseType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="CUSTOMER_ID" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="FIRST_NAME" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="LAST_NAME" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="PHONE" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="EMAIL" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="STREET" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="CITY" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="STATE" type="string"/>
+    		<element maxOccurs="1" minOccurs="0" name="ZIP_CODE" type="string"/>
+
+    		<element maxOccurs="1" minOccurs="0" name="Res_Message" type="string"/>
+    	</sequence>
+    </complexType>
+
+    <element name="DeactivateAccount_Request" type="tns:DeactivateAccount_RequestType">
+    </element>
+    
+    <complexType name="DeactivateAccount_RequestType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="1" name="CUSTOMER_ID" type="string"/>
+
+    	</sequence>
+    </complexType>
+
+    <element name="DeactivateAccount_Response" type="tns:DeactivateAccount_ResponseType">
+    </element>
+    
+    <complexType name="DeactivateAccount_ResponseType">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="Res_message" type="string"/>
+    	</sequence>
+    </complexType>
+
+
+
+
+
+
+    <complexType name="GetAccountDetails_ResponseArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="GetAccountDetails_Response" type="tns:GetAccountDetails_ResponseType"/>
+    </sequence>
+  </complexType>
+    <element name="GetAccountDetails_ResponseArray" type="tns:GetAccountDetails_ResponseArray"/>
+</schema>

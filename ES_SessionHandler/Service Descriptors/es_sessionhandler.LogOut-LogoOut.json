@@ -1,0 +1,72 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "LogoOut",
+    "description" : "LogoOut service"
+  },
+  "host" : "localhost:8089",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/logoout" : {
+      "post" : {
+        "summary" : "postLogoOut",
+        "description" : "postLogoOut",
+        "operationId" : "post-logoout",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Logout_Request"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a logout_Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/logout_Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "logout_Response" : {
+      "type" : "object",
+      "properties" : {
+        "User_ID" : {
+          "type" : "string"
+        },
+        "Status" : {
+          "type" : "string"
+        },
+        "Res_Message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Logout_Request" : {
+      "type" : "object",
+      "properties" : {
+        "User_ID" : {
+          "type" : "string"
+        },
+        "Session_ID" : {
+          "type" : "string"
+        },
+        "Transaction_ID" : {
+          "type" : "string"
+        },
+        "Req_TimeStamp" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

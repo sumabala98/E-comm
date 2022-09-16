@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/ES_SessionHandler/Service Descriptors/es_sessionhandler.LogIn-LogIn.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/SessionHandler"
+    },
+    {
+        "jsonSchemaLocation": "/ES_SessionHandler/Service Descriptors/es_sessionhandler.LogoOut-LogoOut.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/SessionHandler"
+    }
+]}

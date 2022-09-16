@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.eniquesolutions.com/TrackShipment/AbstractWSDL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.example.org/ShipmentManagement" name="TrackShipment" targetNamespace="http://www.eniquesolutions.com/TrackShipment/AbstractWSDL">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.eniquesolutions.com/TrackShipment/AbstractWSDL">
+      <xsd:element name="NewOperation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema>
+    	<xsd:import namespace="http://www.example.org/ShipmentManagement" schemaLocation="../../ES_Common_Model/Schemas/ShipmentManagement/ShipmentManagement.xsd">
+    	</xsd:import>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="TrackingShipmentRequest">
+    <wsdl:part name="parameters" type="xsd1:TrackingShipment_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="TrackingShipmentResponse">
+    <wsdl:part name="parameters" type="xsd1:TrackingShipment_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateShipmentRequest">
+  	<wsdl:part name="UpdateShipmentRequest" type="xsd1:UpdateShipment_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateShipmentResponse">
+  	<wsdl:part name="UpdateShipmentResponse" type="xsd1:UpdateShipment_ResponseType"/>
+  </wsdl:message>
+    <wsdl:portType name="TrackShipment">
+    <wsdl:operation name="TrackingShipment">
+      <wsdl:input message="tns:TrackingShipmentRequest"/>
+      <wsdl:output message="tns:TrackingShipmentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipment">
+    	<wsdl:input message="tns:UpdateShipmentRequest"/>
+    	<wsdl:output message="tns:UpdateShipmentResponse"/>
+    </wsdl:operation>
+    </wsdl:portType>
+  <wsdl:binding name="TrackShipmentSOAP" type="tns:TrackShipment">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="TrackingShipment">
+      <soap:operation soapAction="http://www.eniquesolutions.com/TrackShipment/AbstractWSDL/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TrackShipment">
+    <wsdl:port binding="tns:TrackShipmentSOAP" name="TrackShipmentSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

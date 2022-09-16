@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/FaultSchema" xmlns:tns="http://www.example.org/FaultSchema" elementFormDefault="qualified">
+
+    <element name="FaultSchema" type="tns:FaultSchemaType"></element>
+    
+    <complexType name="FaultSchemaType">
+    	<sequence>
+    		<element name="Message" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Message_Code" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="StackTrace" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Process_id" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Process_name" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

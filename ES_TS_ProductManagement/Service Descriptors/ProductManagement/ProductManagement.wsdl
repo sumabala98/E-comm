@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.EniqueSolutions.com/ProductManagement/AbtractWSDL" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.example.org/ProductManagement" name="ProductManagement" targetNamespace="http://www.EniqueSolutions.com/ProductManagement/AbtractWSDL">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.EniqueSolutions.com/ProductManagement/AbtractWSDL">
+      <xsd:element name="NewOperation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema>
+    	<xsd:import namespace="http://www.example.org/ProductManagement" schemaLocation="../../../ES_Common_Model/Schemas/ProductManagement/ProductManagement.xsd">
+    	</xsd:import>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddIndividualProductRequest">
+    <wsdl:part name="parameters" type="xsd1:AddIndividualProduct_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="AddIndividualProductResponse">
+    <wsdl:part name="parameters" type="xsd1:AddIndividualProduct_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="AddProductRequest">
+  	<wsdl:part name="AddProductRequest" type="xsd1:AddProducts_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="AddProductResponse">
+  	<wsdl:part name="AddProductResponse" type="xsd1:AddProducts_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteProductRequest">
+  	<wsdl:part name="DeleteProductRequest" type="xsd1:DeleteProducts_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteProductResponse">
+  	<wsdl:part name="DeleteProductResponse" type="xsd1:DeleteProducts_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsRequest">
+  	<wsdl:part name="GetAllProductsRequest" type="xsd1:GetAllProducts_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsResponse">
+  	<wsdl:part name="GetAllProductsResponse" type="xsd1:GetAllProducts_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="GetIndividualProductRequest">
+  	<wsdl:part name="GetIndividualProductRequest" type="xsd1:GetIndividualProduct_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="GetIndividualProductResponse">
+  	<wsdl:part name="GetIndividualProductResponse" type="xsd1:GetIndividualProduct_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductsByCategoryRequest">
+  	<wsdl:part name="GetProductsByCategoryRequest" type="xsd1:GetProductsByCategory_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductsByCategoryResponse">
+  	<wsdl:part name="GetProductsByCategoryResponse" type="xsd1:GetProductsByCategory_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateProductRequest">
+  	<wsdl:part name="UpdateProductRequest" type="xsd1:UpdateProducts_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateProductResponse">
+  	<wsdl:part name="UpdateProductResponse" type="xsd1:UpdateProducts_ResponseType"/>
+  </wsdl:message>
+    <wsdl:portType name="ProductManagement">
+    <wsdl:operation name="AddIndividualProduct">
+      <wsdl:input message="tns:AddIndividualProductRequest"/>
+      <wsdl:output message="tns:AddIndividualProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+    	<wsdl:input message="tns:AddProductRequest"/>
+    	<wsdl:output message="tns:AddProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+    	<wsdl:input message="tns:DeleteProductRequest"/>
+    	<wsdl:output message="tns:DeleteProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+    	<wsdl:input message="tns:GetAllProductsRequest"/>
+    	<wsdl:output message="tns:GetAllProductsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndividualProduct">
+    	<wsdl:input message="tns:GetIndividualProductRequest"/>
+    	<wsdl:output message="tns:GetIndividualProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByCategory">
+    	<wsdl:input message="tns:GetProductsByCategoryRequest"/>
+    	<wsdl:output message="tns:GetProductsByCategoryResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+    	<wsdl:input message="tns:UpdateProductRequest"/>
+    	<wsdl:output message="tns:UpdateProductResponse"/>
+    </wsdl:operation>
+    </wsdl:portType>
+  <wsdl:binding name="ProductManagementSOAP" type="tns:ProductManagement">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddIndividualProduct">
+      <soap:operation soapAction="http://www.EniqueSolutions.com/ProductManagement/AbtractWSDL/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductManagement">
+    <wsdl:port binding="tns:ProductManagementSOAP" name="ProductManagementSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

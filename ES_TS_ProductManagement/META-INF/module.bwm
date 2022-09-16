@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AbtractWSDL="http://www.EniqueSolutions.com/ProductManagement/AbtractWSDL" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:ProductManagement="http://www.example.org/ProductManagement" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:aw1="http://www.eniquesolutions.com/wsdl/ProductManagement/AbstractWSDL/aw1" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_p2hVwAwWEe2Vkoq14o63Kg" targetNamespace="http://tns.tibco.com/bw/composite/ES_TS_ProductManagement" name="ES_TS_ProductManagement" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_ek5swAy0Ee2gltrkHj-c3Q" name="ProductManagement" promote="ComponentProductManagement_TS/ProductManagement">
+    <sca:interface.wsdl xmi:id="_ek5sxAy0Ee2gltrkHj-c3Q" interface="http://www.EniqueSolutions.com/ProductManagement/AbtractWSDL#wsdl.interface(ProductManagement)" scaext:wsdlLocation="../Service%20Descriptors/ProductManagement/ProductManagement.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_F_R2UAy-Ee2gltrkHj-c3Q" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/5ea8e2c563454559b8f00715fb2af50c/SOAPServiceBinding" portTypeQName="AbtractWSDL:ProductManagement" transportBindingType="JMS" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+      <bindingType xmi:id="_F_R2UQy-Ee2gltrkHj-c3Q"/>
+      <inboundConfiguration xsi:type="axis2:JMSInboundTransportConfiguration" xmi:id="_Gkbx0Ay-Ee2gltrkHj-c3Q" jmsResource="es_common_model.JMSConnectionResource" destination="e-comm.q" messageType="Text"/>
+      <operationConfiguration xmi:id="_F_R2Ugy-Ee2gltrkHj-c3Q" operationName="AddIndividualProduct" action="AddIndividualProduct" actionNeeded="true">
+        <bindingType xmi:id="_F_R2Uwy-Ee2gltrkHj-c3Q"/>
+        <messageConfiguration xmi:id="_F_R2VAy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:AddIndividualProductRequest" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2VQy-Ee2gltrkHj-c3Q" partName="parameters" partTypeName="ProductManagement:AddIndividualProduct_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_F_R2Vgy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:AddIndividualProductResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2Vwy-Ee2gltrkHj-c3Q" partName="parameters" partTypeName="ProductManagement:AddIndividualProduct_ResponseType"/>
+        </messageConfiguration>
+        <context xmi:id="_F_R2fAy-Ee2gltrkHj-c3Q">
+          <inputMapping xmi:id="_F_R2fQy-Ee2gltrkHj-c3Q"/>
+          <outputMapping xmi:id="_F_R2fgy-Ee2gltrkHj-c3Q" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_F_R2WAy-Ee2gltrkHj-c3Q" operationName="AddProduct" action="AddProduct" actionNeeded="true">
+        <bindingType xmi:id="_F_R2WQy-Ee2gltrkHj-c3Q"/>
+        <messageConfiguration xmi:id="_F_R2Wgy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:AddProductRequest" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2Wwy-Ee2gltrkHj-c3Q" partName="AddProductRequest" partTypeName="ProductManagement:AddProducts_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_F_R2XAy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:AddProductResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2XQy-Ee2gltrkHj-c3Q" partName="AddProductResponse" partTypeName="ProductManagement:AddProducts_ResponseType"/>
+        </messageConfiguration>
+        <context xmi:id="_F_R2fwy-Ee2gltrkHj-c3Q">
+          <inputMapping xmi:id="_F_R2gAy-Ee2gltrkHj-c3Q"/>
+          <outputMapping xmi:id="_F_R2gQy-Ee2gltrkHj-c3Q" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_F_R2Xgy-Ee2gltrkHj-c3Q" operationName="DeleteProduct" action="DeleteProduct" actionNeeded="true">
+        <bindingType xmi:id="_F_R2Xwy-Ee2gltrkHj-c3Q"/>
+        <messageConfiguration xmi:id="_F_R2YAy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:DeleteProductRequest" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2YQy-Ee2gltrkHj-c3Q" partName="DeleteProductRequest" partTypeName="ProductManagement:DeleteProducts_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_F_R2Ygy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:DeleteProductResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2Ywy-Ee2gltrkHj-c3Q" partName="DeleteProductResponse" partTypeName="ProductManagement:DeleteProducts_ResponseType"/>
+        </messageConfiguration>
+        <context xmi:id="_F_R2ggy-Ee2gltrkHj-c3Q">
+          <inputMapping xmi:id="_F_R2gwy-Ee2gltrkHj-c3Q"/>
+          <outputMapping xmi:id="_F_R2hAy-Ee2gltrkHj-c3Q" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_F_R2ZAy-Ee2gltrkHj-c3Q" operationName="GetAllProducts" action="GetAllProducts" actionNeeded="true">
+        <bindingType xmi:id="_F_R2ZQy-Ee2gltrkHj-c3Q"/>
+        <messageConfiguration xmi:id="_F_R2Zgy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:GetAllProductsRequest" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2Zwy-Ee2gltrkHj-c3Q" partName="GetAllProductsRequest" partTypeName="ProductManagement:GetAllProducts_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_F_R2aAy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:GetAllProductsResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2aQy-Ee2gltrkHj-c3Q" partName="GetAllProductsResponse" partTypeName="ProductManagement:GetAllProducts_ResponseType"/>
+        </messageConfiguration>
+        <context xmi:id="_F_R2hQy-Ee2gltrkHj-c3Q">
+          <inputMapping xmi:id="_F_R2hgy-Ee2gltrkHj-c3Q"/>
+          <outputMapping xmi:id="_F_R2hwy-Ee2gltrkHj-c3Q" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_F_R2agy-Ee2gltrkHj-c3Q" operationName="GetIndividualProduct" action="GetIndividualProduct" actionNeeded="true">
+        <bindingType xmi:id="_F_R2awy-Ee2gltrkHj-c3Q"/>
+        <messageConfiguration xmi:id="_F_R2bAy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:GetIndividualProductRequest" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2bQy-Ee2gltrkHj-c3Q" partName="GetIndividualProductRequest" partTypeName="ProductManagement:GetIndividualProduct_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_F_R2bgy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:GetIndividualProductResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2bwy-Ee2gltrkHj-c3Q" partName="GetIndividualProductResponse" partTypeName="ProductManagement:GetIndividualProduct_ResponseType"/>
+        </messageConfiguration>
+        <context xmi:id="_F_R2iAy-Ee2gltrkHj-c3Q">
+          <inputMapping xmi:id="_F_R2iQy-Ee2gltrkHj-c3Q"/>
+          <outputMapping xmi:id="_F_R2igy-Ee2gltrkHj-c3Q" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_F_R2cAy-Ee2gltrkHj-c3Q" operationName="GetProductsByCategory" action="GetProductsByCategory" actionNeeded="true">
+        <bindingType xmi:id="_F_R2cQy-Ee2gltrkHj-c3Q"/>
+        <messageConfiguration xmi:id="_F_R2cgy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:GetProductsByCategoryRequest" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2cwy-Ee2gltrkHj-c3Q" partName="GetProductsByCategoryRequest" partTypeName="ProductManagement:GetProductsByCategory_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_F_R2dAy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:GetProductsByCategoryResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2dQy-Ee2gltrkHj-c3Q" partName="GetProductsByCategoryResponse" partTypeName="ProductManagement:GetProductsByCategory_ResponseType"/>
+        </messageConfiguration>
+        <context xmi:id="_F_R2iwy-Ee2gltrkHj-c3Q">
+          <inputMapping xmi:id="_F_R2jAy-Ee2gltrkHj-c3Q"/>
+          <outputMapping xmi:id="_F_R2jQy-Ee2gltrkHj-c3Q" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_F_R2dgy-Ee2gltrkHj-c3Q" operationName="UpdateProduct" action="UpdateProduct" actionNeeded="true">
+        <bindingType xmi:id="_F_R2dwy-Ee2gltrkHj-c3Q"/>
+        <messageConfiguration xmi:id="_F_R2eAy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:UpdateProductRequest" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2eQy-Ee2gltrkHj-c3Q" partName="UpdateProductRequest" partTypeName="ProductManagement:UpdateProducts_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_F_R2egy-Ee2gltrkHj-c3Q" messageQName="AbtractWSDL:UpdateProductResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_ProductManagement/Service%20Descriptors/ProductManagement/ProductManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_F_R2ewy-Ee2gltrkHj-c3Q" partName="UpdateProductResponse" partTypeName="ProductManagement:UpdateProducts_ResponseType"/>
+        </messageConfiguration>
+        <context xmi:id="_F_R2jgy-Ee2gltrkHj-c3Q">
+          <inputMapping xmi:id="_F_R2jwy-Ee2gltrkHj-c3Q"/>
+          <outputMapping xmi:id="_F_R2kAy-Ee2gltrkHj-c3Q" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_F_R2kQy-Ee2gltrkHj-c3Q" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_qD-i8AwWEe2Vkoq14o63Kg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qEIT8AwWEe2Vkoq14o63Kg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qEIT8QwWEe2Vkoq14o63Kg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qEIT8gwWEe2Vkoq14o63Kg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qEIT8wwWEe2Vkoq14o63Kg" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qEIT9AwWEe2Vkoq14o63Kg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qERd4AwWEe2Vkoq14o63Kg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qERd4QwWEe2Vkoq14o63Kg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_qERd4gwWEe2Vkoq14o63Kg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_-ctoUAyzEe2gltrkHj-c3Q" name="ComponentProductManagement_TS" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_-ctoUQyzEe2gltrkHj-c3Q" processName="es_ts_productmanagement.ProductManagement_TS"/>
+    <sca:service xmi:id="_ekv7wAy0Ee2gltrkHj-c3Q" name="ProductManagement">
+      <sca:interface.wsdl xmi:id="_ekv7wQy0Ee2gltrkHj-c3Q" interface="http://www.EniqueSolutions.com/ProductManagement/AbtractWSDL#wsdl.interface(ProductManagement)" scaext:wsdlLocation="../Service%20Descriptors/ProductManagement/ProductManagement.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

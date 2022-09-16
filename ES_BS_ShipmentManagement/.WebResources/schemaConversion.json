@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/ES_BS_ShipmentManagement/Service Descriptors/es_bs_shipmentmanagement.ShipmentManagement-ShipmentManagement.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://www.example.org/ShipmentManagement"
+}]}

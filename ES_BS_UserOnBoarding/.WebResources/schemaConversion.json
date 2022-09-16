@@ -1,0 +1,36 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/ES_BS_UserOnBoarding/Service Descriptors/es_bs_useronboarding.Resource-Resource.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/UserOnBoarding"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_UserOnBoarding/Service Descriptors/es_bs_useronboarding.UpdateAccount_BS-UpdateAccount_BS.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model/Schemas/UserOnBoarding/UserOnBoarding.xsd",
+        "xsdSchemaTargetNamespace": "http://www.example.org/UserOnBoarding"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_UserOnBoarding/Service Descriptors/es_bs_useronboarding.UpdateAccount_BS-UpdateAccount_BS.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model/Schemas/ResponseSchema.xsd",
+        "xsdSchemaTargetNamespace": "http://www.example.org/ResponseSchema"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_UserOnBoarding/Service Descriptors/es_bs_useronboarding.GetAccountDetails_BS-GetAccountDetails_BS.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model/Schemas/UserOnBoarding/UserOnBoarding.xsd",
+        "xsdSchemaTargetNamespace": "http://www.example.org/UserOnBoarding"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_UserOnBoarding/Service Descriptors/es_bs_useronboarding.GetAccountDetails_BS-GetAccountDetails_BS.json",
+        "conversionType": "linked",
+        "xsdSchemaLocation": "/ES_Common_Model/Schemas/UserOnBoarding/UserOnBoarding.xsd",
+        "xsdSchemaTargetNamespace": "http://www.example.org/UserOnBoarding"
+    },
+    {
+        "jsonSchemaLocation": "/ES_BS_UserOnBoarding/Service Descriptors/es_bs_useronboarding.UserOnBoarding-UserOnBoarding.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/UserOnBoarding"
+    }
+]}

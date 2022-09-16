@@ -1,0 +1,70 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "LogIn",
+    "description" : "LogIn service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/login" : {
+      "post" : {
+        "summary" : "postLogIn",
+        "description" : "postLogIn",
+        "operationId" : "post-login",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/LogIn_Request"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a login_Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/login_Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "LogIn_Request" : {
+      "type" : "object",
+      "required" : [ "User_ID", "Password" ],
+      "properties" : {
+        "User_ID" : {
+          "type" : "string"
+        },
+        "Password" : {
+          "type" : "string"
+        }
+      }
+    },
+    "login_Response" : {
+      "type" : "object",
+      "properties" : {
+        "User_ID" : {
+          "type" : "string"
+        },
+        "Status" : {
+          "type" : "string"
+        },
+        "Session_ID" : {
+          "type" : "string"
+        },
+        "Res_Message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Payment",
+    "description" : "Payment service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/payment" : {
+      "post" : {
+        "summary" : "postPayment",
+        "description" : "postPayment",
+        "operationId" : "post-payment",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/payment"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a Payment_response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/Payment_response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "orderDetails" : {
+      "type" : "object",
+      "required" : [ "orderID", "Product_Id", "price" ],
+      "properties" : {
+        "orderID" : {
+          "type" : "string"
+        },
+        "Product_Id" : {
+          "type" : "string"
+        },
+        "price" : {
+          "type" : "number"
+        }
+      }
+    },
+    "payment" : {
+      "type" : "object",
+      "properties" : {
+        "totalAmount" : {
+          "type" : "number"
+        },
+        "paymentID" : {
+          "type" : "string"
+        },
+        "orderDetails" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/orderDetails",
+            "uniqueItems" : false
+          }
+        },
+        "AccountDetails" : {
+          "$ref" : "#/definitions/AccountDetails"
+        },
+        "customerID" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Payment_response" : {
+      "type" : "object",
+      "properties" : {
+        "Res_message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AccountDetails" : {
+      "type" : "object",
+      "required" : [ "Account_Holder_Name", "IFSC_Code", "Account_No" ],
+      "properties" : {
+        "Account_No" : {
+          "type" : "string"
+        },
+        "Account_Holder_Name" : {
+          "type" : "string"
+        },
+        "IFSC_Code" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

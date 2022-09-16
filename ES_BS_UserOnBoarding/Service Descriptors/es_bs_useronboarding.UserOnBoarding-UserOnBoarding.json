@@ -1,0 +1,269 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "UserOnBoarding",
+    "description" : "UserOnBoarding service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/DeactivateAccount" : {
+      "post" : {
+        "summary" : "postUserOnBoarding",
+        "description" : "postUserOnBoarding",
+        "operationId" : "post-DeactivateAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/DeactivateAccount_Request"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a DeactivateAccount_Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/DeactivateAccount_Response"
+            }
+          }
+        }
+      }
+    },
+    "/CreateAccount" : {
+      "post" : {
+        "summary" : "postUserOnBoarding",
+        "description" : "postUserOnBoarding",
+        "operationId" : "post-CreateAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/CreateAccount_Request"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a CreateAccount_Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/CreateAccount_Response"
+            }
+          }
+        }
+      }
+    },
+    "/UpdateAccount" : {
+      "post" : {
+        "summary" : "postUserOnBoarding",
+        "description" : "postUserOnBoarding",
+        "operationId" : "post-UpdateAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/UpdateAccount_Request"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a UpdateaAccount_Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/UpdateaAccount_Response"
+            }
+          }
+        }
+      }
+    },
+    "/GetAccount" : {
+      "get" : {
+        "summary" : "getUserOnBoarding",
+        "description" : "getUserOnBoarding",
+        "operationId" : "get-GetAccount",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "Customer_ID",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a GetAccountDetails_ResponseArray to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/GetAccountDetails_ResponseArray"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "DeactivateAccount_Response" : {
+      "type" : "object",
+      "properties" : {
+        "Res_message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GetAccountDetails_Response" : {
+      "type" : "object",
+      "properties" : {
+        "CUSTOMER_ID" : {
+          "type" : "string"
+        },
+        "FIRST_NAME" : {
+          "type" : "string"
+        },
+        "LAST_NAME" : {
+          "type" : "string"
+        },
+        "PHONE" : {
+          "type" : "string"
+        },
+        "EMAIL" : {
+          "type" : "string"
+        },
+        "STREET" : {
+          "type" : "string"
+        },
+        "CITY" : {
+          "type" : "string"
+        },
+        "STATE" : {
+          "type" : "string"
+        },
+        "ZIP_CODE" : {
+          "type" : "string"
+        },
+        "Res_Message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CreateAccount_Request" : {
+      "type" : "object",
+      "required" : [ "CUSTOMER_ID", "LAST_NAME", "EMAIL", "FIRST_NAME" ],
+      "properties" : {
+        "CUSTOMER_ID" : {
+          "type" : "string"
+        },
+        "FIRST_NAME" : {
+          "type" : "string"
+        },
+        "LAST_NAME" : {
+          "type" : "string"
+        },
+        "PHONE" : {
+          "type" : "string"
+        },
+        "EMAIL" : {
+          "type" : "string"
+        },
+        "PASSWORD" : {
+          "type" : "string"
+        },
+        "STREET" : {
+          "type" : "string"
+        },
+        "CITY" : {
+          "type" : "string"
+        },
+        "STATE" : {
+          "type" : "string"
+        },
+        "ZIP_CODE" : {
+          "type" : "string"
+        }
+      }
+    },
+    "UpdateAccount_Request" : {
+      "type" : "object",
+      "required" : [ "CUSTOMER_ID" ],
+      "properties" : {
+        "CUSTOMER_ID" : {
+          "type" : "string"
+        },
+        "FIRST_NAME" : {
+          "type" : "string"
+        },
+        "LAST_NAME" : {
+          "type" : "string"
+        },
+        "PHONE" : {
+          "type" : "string"
+        },
+        "EMAIL" : {
+          "type" : "string"
+        },
+        "PASSWORD" : {
+          "type" : "string"
+        },
+        "STREET" : {
+          "type" : "string"
+        },
+        "CITY" : {
+          "type" : "string"
+        },
+        "STATE" : {
+          "type" : "string"
+        },
+        "ZIP_CODE" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GetAccountDetails_ResponseArray" : {
+      "type" : "object",
+      "properties" : {
+        "GetAccountDetails_Response" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/GetAccountDetails_Response",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "DeactivateAccount_Request" : {
+      "type" : "object",
+      "required" : [ "CUSTOMER_ID" ],
+      "properties" : {
+        "CUSTOMER_ID" : {
+          "type" : "string"
+        }
+      }
+    },
+    "UpdateaAccount_Response" : {
+      "type" : "object",
+      "properties" : {
+        "Res_Message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "CreateAccount_Response" : {
+      "type" : "object",
+      "properties" : {
+        "Res_Message" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

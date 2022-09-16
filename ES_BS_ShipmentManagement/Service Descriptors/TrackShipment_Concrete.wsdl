@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tibex="http://www.tibco.com/bs3.2/extensions" xmlns:tns="http://www.eniquesolutions.com/TrackShipment/ConcreteWSDL" xmlns:tns0="http://www.example.org/ShipmentManagement" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TrackShipment" targetNamespace="http://www.eniquesolutions.com/TrackShipment/ConcreteWSDL" tibex:src="file:/C:/Suma/TIBCO6Workspace/BW6_Training/MiniProject/Documents/Wsdls/TrackShipment_Concrete.wsdl">
+  <wsdl:types>
+    <xsd:schema xmlns:tns="http://www.example.org/ShipmentManagement" elementFormDefault="qualified" targetNamespace="http://www.example.org/ShipmentManagement">
+      <xsd:element name="TrackingShipment_Request" type="tns:TrackingShipment_RequestType"/>
+      <xsd:complexType name="TrackingShipment_RequestType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CUSTOMER_ID" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Session_id" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ORDER_ID" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="UpdateShipment_Request" type="tns:UpdateShipment_RequestType"/>
+      <xsd:complexType name="UpdateShipment_RequestType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ORDER_ID" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ORDER_STATUS" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Session_id" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="TrackingShipment_Response" type="tns:TrackingShipment_ResponseType"/>
+      <xsd:complexType name="TrackingShipment_ResponseType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ORDER_ID" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Res_Message" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ORDER_STATUS" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="UpdateShipment_Response" type="tns:UpdateShipment_ResponseType"/>
+      <xsd:complexType name="UpdateShipment_ResponseType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ORDER_ID" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Res_Message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="TrackingShipmentRequest">
+    <wsdl:part name="parameters" type="tns0:TrackingShipment_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="TrackingShipmentResponse">
+    <wsdl:part name="parameters" type="tns0:TrackingShipment_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateShipmentRequest">
+    <wsdl:part name="UpdateShipmentRequest" type="tns0:UpdateShipment_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateShipmentResponse">
+    <wsdl:part name="UpdateShipmentResponse" type="tns0:UpdateShipment_ResponseType"/>
+  </wsdl:message>
+  <wsdl:portType name="TrackShipment">
+    <wsdl:operation name="TrackingShipment">
+      <wsdl:input message="tns:TrackingShipmentRequest"/>
+      <wsdl:output message="tns:TrackingShipmentResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipment">
+      <wsdl:input message="tns:UpdateShipmentRequest"/>
+      <wsdl:output message="tns:UpdateShipmentResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPServiceBinding" type="tns:TrackShipment">
+    <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+    <jms:binding messageFormat="text"/>
+    <wsdl:operation name="TrackingShipment">
+      <soap:operation soapAction="TrackingShipment" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateShipment">
+      <soap:operation soapAction="UpdateShipment" style="document"/>
+      <wsdl:input>
+        <soap:body parts="UpdateShipmentRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="UpdateShipmentResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TrackShipment">
+    <wsdl:port binding="tns:SOAPServiceBinding" name="TrackShipmentSOAP">
+      <soap:address location=""/>
+      <jms:connectionFactory/>
+      <jms:targetAddress destination="queue">e-comm.q</jms:targetAddress>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

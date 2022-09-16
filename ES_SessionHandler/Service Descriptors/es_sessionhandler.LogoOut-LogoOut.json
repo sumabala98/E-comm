@@ -1,0 +1,49 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "LogoOut",
+    "description" : "LogoOut service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/logoout" : {
+      "post" : {
+        "summary" : "postLogoOut",
+        "description" : "postLogoOut",
+        "operationId" : "post-logoout",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Logout_Request"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a logout_Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/logout_Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "logout_Response" : {
+      "type" : "object",
+      "properties" : { }
+    },
+    "Logout_Request" : {
+      "type" : "object",
+      "properties" : { }
+    }
+  }
+}

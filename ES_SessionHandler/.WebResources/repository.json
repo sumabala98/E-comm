@@ -1,0 +1,21 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/es_sessionhandler.LogIn-LogIn.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/es_sessionhandler.LogoOut-LogoOut.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/es_sessionhandler.LogOut-LogoOut.json",
+            "type": "generated"
+        }
+    ]
+}

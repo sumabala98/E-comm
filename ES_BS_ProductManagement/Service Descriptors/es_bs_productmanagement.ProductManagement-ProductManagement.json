@@ -1,0 +1,198 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "ProductManagement",
+    "description" : "ProductManagement service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/GetAllProducts" : {
+      "get" : {
+        "summary" : "getProductManagement",
+        "description" : "getProductManagement",
+        "operationId" : "get-GetAllProducts",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a GetAllProducts_Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/GetAllProducts_Response"
+            }
+          }
+        }
+      }
+    },
+    "/GetProductsByCategory" : {
+      "get" : {
+        "summary" : "getProductManagement",
+        "description" : "getProductManagement",
+        "operationId" : "get-GetProductsByCategory",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "CATEGORY_NAME",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a GetProductsByCategory_Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/GetProductsByCategory_Response"
+            }
+          }
+        }
+      }
+    },
+    "/AddIndividualProduct" : {
+      "post" : {
+        "summary" : "postProductManagement",
+        "description" : "postProductManagement",
+        "operationId" : "post-AddIndividualProduct",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/AddIndividualProduct_Request"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a AddIndividualProduct_response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/AddIndividualProduct_response"
+            }
+          }
+        }
+      }
+    },
+    "/GetIndividualProduct" : {
+      "get" : {
+        "summary" : "getProductManagement",
+        "description" : "getProductManagement",
+        "operationId" : "get-GetIndividualProduct",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "PRODUCT_ID",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a GetIndividualProduct_Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/GetIndividualProduct_Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "GetAllProducts_Response" : {
+      "type" : "object",
+      "properties" : {
+        "Product" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Product",
+            "uniqueItems" : false
+          }
+        },
+        "ResMessage" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AddIndividualProduct_response" : {
+      "type" : "object",
+      "properties" : {
+        "ResMessage" : {
+          "type" : "string"
+        },
+        "Product_Id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GetIndividualProduct_Response" : {
+      "type" : "object",
+      "properties" : {
+        "Product" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Product",
+            "uniqueItems" : false
+          }
+        },
+        "Res_Message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GetProductsByCategory_Response" : {
+      "type" : "object",
+      "properties" : {
+        "Product" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Product",
+            "uniqueItems" : false
+          }
+        },
+        "ResMsg" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Product" : {
+      "type" : "object",
+      "properties" : {
+        "PRODUCT_ID" : {
+          "type" : "string"
+        },
+        "PRODUCT_NAME" : {
+          "type" : "string"
+        },
+        "BRAND_ID" : {
+          "type" : "string"
+        },
+        "CATEGORY_ID" : {
+          "type" : "string"
+        },
+        "MODEL_YEAR" : {
+          "type" : "string"
+        },
+        "LIST_PRICE" : {
+          "type" : "string"
+        }
+      }
+    },
+    "AddIndividualProduct_Request" : {
+      "type" : "object",
+      "properties" : {
+        "Product" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Product",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}

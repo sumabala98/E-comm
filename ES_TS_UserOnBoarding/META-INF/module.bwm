@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:CreateAcc="http://www.eniquesolutions.com/wsdl/CreateAcc/" xmlns:DeactivateAcc="http://www.eniquesolutions.com/wsdl/DeactivateAcc/" xmlns:FaultSchema="http://www.example.org/FaultSchema" xmlns:GetAccDetails="http://www.eniquesolutions.com/wsdl/GetAccDetails/" xmlns:UpdateAcc="http://www.eniquesolutions.com/wsdl/UpdateAcc/" xmlns:UserOnBoaeding="http://www.eniquesolutions.com/wsdl/UserOnBoaeding/" xmlns:UserOnBoarding="http://www.example.org/UserOnBoarding" xmlns:UserOnBoarding_1="http://www.eniquesolutions.com/wsdl/UserOnBoarding/" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:pt="http://www.eniquesolutions.com/wsdl/CreateAccount/" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_mZIpgPg5EeyxBZIEYW00qw" targetNamespace="http://tns.tibco.com/bw/composite/ES_TS_UserOnBoarding" name="ES_TS_UserOnBoarding" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_rmN4IgmtEe2xgbMPAYJ38g" name="UserOnBoaeding" promote="ComponentUserOnboarding_TS/UserOnBoaeding">
+    <sca:interface.wsdl xmi:id="_rmN4JgmtEe2xgbMPAYJ38g" interface="http://www.eniquesolutions.com/wsdl/UserOnBoaeding/#wsdl.interface(UserOnBoaeding)" scaext:wsdlLocation="../../ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_BJS-sAvVEe2IS4_nvLKIHQ" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/ffcb128d1a424480bde789d0d3f79aad/SOAPServiceBinding" portTypeQName="UserOnBoaeding:UserOnBoaeding" transportBindingType="JMS" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+      <bindingType xmi:id="_BJsnUAvVEe2IS4_nvLKIHQ"/>
+      <inboundConfiguration xsi:type="axis2:JMSInboundTransportConfiguration" xmi:id="_E9__YAvVEe2IS4_nvLKIHQ" jmsResource="es_common_model.JMSConnectionResource" destination="e-comm.q" messageType="Text"/>
+      <operationConfiguration xmi:id="_BJucgAvVEe2IS4_nvLKIHQ" operationName="CreateAccount" action="CreateAccount" actionNeeded="true">
+        <bindingType xmi:id="_BJucgQvVEe2IS4_nvLKIHQ"/>
+        <messageConfiguration xmi:id="_BJucggvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:CreateAccountRequest" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJucgwvVEe2IS4_nvLKIHQ" partName="parameters" partTypeName="UserOnBoarding:CreateAccount_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_BJuchAvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:CreateAccountResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJuchQvVEe2IS4_nvLKIHQ" partName="parameters" partElementName="UserOnBoarding:CreateAccount_Response"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_BJuchgvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:CreateAccountFault" messageDirection="FAULT" action="fault" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJuchwvVEe2IS4_nvLKIHQ" partName="CreateAcc_Fault" partTypeName="FaultSchema:FaultSchemaType"/>
+        </messageConfiguration>
+        <context xmi:id="_BJucoAvVEe2IS4_nvLKIHQ">
+          <inputMapping xmi:id="_BJw4wAvVEe2IS4_nvLKIHQ"/>
+          <outputMapping xmi:id="_BJw4wQvVEe2IS4_nvLKIHQ" direction="OUTPUT"/>
+          <faultMappings xmi:id="_BJw4wgvVEe2IS4_nvLKIHQ" direction="FAULT" faultName="fault"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_BJuciAvVEe2IS4_nvLKIHQ" operationName="DeactivateAccount" action="DeactivateAccount" actionNeeded="true">
+        <bindingType xmi:id="_BJuciQvVEe2IS4_nvLKIHQ"/>
+        <messageConfiguration xmi:id="_BJucigvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:DeactivateAccountRequest" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJuciwvVEe2IS4_nvLKIHQ" partName="parameters" partElementName="UserOnBoarding:DeactivateAccount_Request"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_BJucjAvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:DeactivateAccountResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJucjQvVEe2IS4_nvLKIHQ" partName="parameters" partElementName="UserOnBoarding:DeactivateAccount_Response"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_BJucjgvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:DeactivateAccountFault" messageDirection="FAULT" action="fault" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJucjwvVEe2IS4_nvLKIHQ" partName="Deactivate_Fault" partTypeName="FaultSchema:FaultSchemaType"/>
+        </messageConfiguration>
+        <context xmi:id="_BJw4wwvVEe2IS4_nvLKIHQ">
+          <inputMapping xmi:id="_BJw4xAvVEe2IS4_nvLKIHQ"/>
+          <outputMapping xmi:id="_BJw4xQvVEe2IS4_nvLKIHQ" direction="OUTPUT"/>
+          <faultMappings xmi:id="_BJw4xgvVEe2IS4_nvLKIHQ" direction="FAULT" faultName="fault"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_BJuckAvVEe2IS4_nvLKIHQ" operationName="GetAccount" action="GetAccount" actionNeeded="true">
+        <bindingType xmi:id="_BJuckQvVEe2IS4_nvLKIHQ"/>
+        <messageConfiguration xmi:id="_BJuckgvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:GetAccountRequest" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJuckwvVEe2IS4_nvLKIHQ" partName="parameters" partElementName="UserOnBoarding:GetAccountDetails_Request"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_BJuclAvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:GetAccountResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJuclQvVEe2IS4_nvLKIHQ" partName="parameters" partElementName="UserOnBoarding:GetAccountDetails_Response"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_BJuclgvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:GetAccountFault" messageDirection="FAULT" action="fault" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJuclwvVEe2IS4_nvLKIHQ" partName="Get_Fault" partTypeName="FaultSchema:FaultSchemaType"/>
+        </messageConfiguration>
+        <context xmi:id="_BJw4xwvVEe2IS4_nvLKIHQ">
+          <inputMapping xmi:id="_BJw4yAvVEe2IS4_nvLKIHQ"/>
+          <outputMapping xmi:id="_BJw4yQvVEe2IS4_nvLKIHQ" direction="OUTPUT"/>
+          <faultMappings xmi:id="_BJw4ygvVEe2IS4_nvLKIHQ" direction="FAULT" faultName="fault"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_BJucmAvVEe2IS4_nvLKIHQ" operationName="UpdateAccount" action="UpdateAccount" actionNeeded="true">
+        <bindingType xmi:id="_BJucmQvVEe2IS4_nvLKIHQ"/>
+        <messageConfiguration xmi:id="_BJucmgvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:UpdateAccountRequest" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJucmwvVEe2IS4_nvLKIHQ" partName="parameters" partElementName="UserOnBoarding:UpdateAccount_Request"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_BJucnAvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:UpdateAccountResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJucnQvVEe2IS4_nvLKIHQ" partName="parameters" partElementName="UserOnBoarding:UpdateaAccount_Response"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_BJucngvVEe2IS4_nvLKIHQ" messageQName="UserOnBoaeding:UpdateAccountFault" messageDirection="FAULT" action="fault" wsdlLocation="platform:/resource/ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_BJucnwvVEe2IS4_nvLKIHQ" partName="Update_Fault" partTypeName="FaultSchema:FaultSchemaType"/>
+        </messageConfiguration>
+        <context xmi:id="_BJw4ywvVEe2IS4_nvLKIHQ">
+          <inputMapping xmi:id="_BJw4zAvVEe2IS4_nvLKIHQ"/>
+          <outputMapping xmi:id="_BJw4zQvVEe2IS4_nvLKIHQ" direction="OUTPUT"/>
+          <faultMappings xmi:id="_BJw4zgvVEe2IS4_nvLKIHQ" direction="FAULT" faultName="fault"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_BJw4zwvVEe2IS4_nvLKIHQ" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_myFVAPg5EeyxBZIEYW00qw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_myY3APg5EeyxBZIEYW00qw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_myrx8Pg5EeyxBZIEYW00qw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_my1i8Pg5EeyxBZIEYW00qw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_my-s4Pg5EeyxBZIEYW00qw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mzId4Pg5EeyxBZIEYW00qw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mzSO4Pg5EeyxBZIEYW00qw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mzb_4Pg5EeyxBZIEYW00qw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_mzu60Pg5EeyxBZIEYW00qw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_iDdTEAZ5Ee2ji_f2UIHx-Q" name="ComponentUserOnboarding_TS" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_iDdTEQZ5Ee2ji_f2UIHx-Q" processName="es_ts_useronboarding.UserOnboarding_TS"/>
+    <sca:service xmi:id="_rmN4IAmtEe2xgbMPAYJ38g" name="UserOnBoaeding">
+      <sca:interface.wsdl xmi:id="_rmN4IQmtEe2xgbMPAYJ38g" interface="http://www.eniquesolutions.com/wsdl/UserOnBoaeding/#wsdl.interface(UserOnBoaeding)" scaext:wsdlLocation="../../ES_Common_Model/Service%20Descriptors/UserOnBoarding/UserOnBoarding.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

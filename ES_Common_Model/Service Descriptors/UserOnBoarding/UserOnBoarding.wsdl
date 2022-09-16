@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.eniquesolutions.com/wsdl/UserOnBoaeding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://www.example.org/UserOnBoarding" name="UserOnBoaeding" targetNamespace="http://www.eniquesolutions.com/wsdl/UserOnBoaeding/" xmlns:xsd2="http://www.example.org/FaultSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.eniquesolutions.com/wsdl/UserOnBoaeding/">
+      <xsd:element name="NewOperation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperation1">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperation1Response">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperation2">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperation2Response">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperation3">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="in" type="xsd:string"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperation3Response">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"/>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperationResponse1">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeactivateAccountFault1">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="DeactivateAccountFault"
+      				type="xsd:string">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAccountFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="GetAccountFault"
+      				type="xsd:string">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateAccountFault">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="UpdateAccountFault"
+      				type="xsd:string">
+      			</xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+            <xsd:element name="operationFault" type="xsd:string"></xsd:element>
+        </xsd:schema>
+    <xsd:schema>
+    	<xsd:import namespace="http://www.example.org/UserOnBoarding" schemaLocation="../../Schemas/UserOnBoarding/UserOnBoarding.xsd">
+    	</xsd:import>
+    	<xsd:import namespace="http://www.example.org/FaultSchema"
+    		schemaLocation="../../Schemas/FaultSchema.xsd">
+    	</xsd:import></xsd:schema>
+  </wsdl:types>
+  <wsdl:types>
+  	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  		<xsd:import namespace="http://www.example.org/UserOnBoarding"
+  			schemaLocation="../../Schemas/UserOnBoarding/UserOnBoarding.xsd">
+  		</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="CreateAccountRequest">
+    <wsdl:part name="parameters" type="xsd1:CreateAccount_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="CreateAccountResponse">
+    <wsdl:part element="xsd1:CreateAccount_Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DeactivateAccountRequest">
+  	<wsdl:part element="xsd1:DeactivateAccount_Request" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="DeactivateAccountResponse">
+  	<wsdl:part element="xsd1:DeactivateAccount_Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetAccountRequest">
+  	<wsdl:part element="xsd1:GetAccountDetails_Request" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GetAccountResponse">
+  	<wsdl:part element="xsd1:GetAccountDetails_Response" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountRequest">
+  	<wsdl:part element="xsd1:UpdateAccount_Request" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateAccountResponse">
+  	<wsdl:part element="xsd1:UpdateaAccount_Response" name="parameters"/>
+  </wsdl:message>
+    <wsdl:message name="operationRequest">
+    <wsdl:part element="xsd1:operationRequest" name="parameters"/>
+  </wsdl:message>
+    <wsdl:message name="operationResponse">
+    <wsdl:part element="xsd1:operationResponse" name="parameters"/>
+  </wsdl:message>
+    <wsdl:message name="NewOperationRequest">
+    	<wsdl:part name="NewOperationRequest" type="xsd:string"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="NewOperationResponse">
+    	<wsdl:part name="parameters" element="tns:NewOperationResponse1"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="CreateAccountFault">
+    	<wsdl:part name="CreateAcc_Fault" type="xsd2:FaultSchemaType"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="DeactivateAccountFault">
+    	<wsdl:part name="Deactivate_Fault" type="xsd2:FaultSchemaType"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="GetAccountFault">
+    	<wsdl:part name="Get_Fault" type="xsd2:FaultSchemaType"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="UpdateAccountFault">
+    	<wsdl:part name="Update_Fault" type="xsd2:FaultSchemaType"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="operationFault">
+    	<wsdl:part name="fault" element="tns:operationFault"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="UserOnBoaeding">
+    <wsdl:operation name="CreateAccount">
+      <wsdl:input message="tns:CreateAccountRequest"/>
+      <wsdl:output message="tns:CreateAccountResponse"/>
+            <wsdl:fault name="fault" message="tns:CreateAccountFault"></wsdl:fault>
+        </wsdl:operation>
+    <wsdl:operation name="DeactivateAccount">
+    	<wsdl:input message="tns:DeactivateAccountRequest"/>
+    	<wsdl:output message="tns:DeactivateAccountResponse"/>
+            <wsdl:fault name="fault" message="tns:DeactivateAccountFault"></wsdl:fault>
+        </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+    	<wsdl:input message="tns:GetAccountRequest"/>
+    	<wsdl:output message="tns:GetAccountResponse"/>
+            <wsdl:fault name="fault" message="tns:GetAccountFault"></wsdl:fault>
+        </wsdl:operation>
+    <wsdl:operation name="UpdateAccount">
+    	<wsdl:input message="tns:UpdateAccountRequest"/>
+    	<wsdl:output message="tns:UpdateAccountResponse"/>
+            <wsdl:fault name="fault" message="tns:UpdateAccountFault"></wsdl:fault>
+        </wsdl:operation>
+    </wsdl:portType>
+  <wsdl:binding name="UserOnBoaedingSOAP" type="tns:UserOnBoaeding">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CreateAccount">
+      <soap:operation soapAction="http://www.eniquesolutions.com/wsdl/UserOnBoaeding/CreateAccount"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+        <wsdl:operation name="operation">
+      <soap:operation soapAction="operation" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    </wsdl:binding>
+  <wsdl:service name="UserOnBoaeding">
+    <wsdl:port binding="tns:UserOnBoaedingSOAP" name="UserOnBoaedingSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

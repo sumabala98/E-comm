@@ -1,0 +1,5 @@
+{"records": [{
+    "jsonSchemaLocation": "/ES_BS_Payments/Service Descriptors/es_bs_payments.Payment-Payment.json",
+    "conversionType": "linked",
+    "xsdSchemaTargetNamespace": "http://www.eniquesolutions.com/updatedSchemas"
+}]}

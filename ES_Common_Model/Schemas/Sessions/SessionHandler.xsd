@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SessionHandler" xmlns:tns="http://www.example.org/SessionHandler" elementFormDefault="qualified">
+
+    <element name="LogIn_Request" type="tns:LogIn_RequestType"></element>
+    
+    <complexType name="LogIn_RequestType">
+    	<sequence>
+    		<element name="User_ID" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Password" type="string" maxOccurs="1" minOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Logout_Request" type="tns:Logout_RequestType"></element>
+    
+    <complexType name="Logout_RequestType">
+    	<sequence>
+    		<element name="User_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Session_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Transaction_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Req_TimeStamp" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="login_Response" type="tns:login_ResponseType"></element>
+    
+    <complexType name="login_ResponseType">
+    	<sequence>
+    		<element name="User_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Status" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Session_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Res_Message" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="logout_Response" type="tns:Logout_ResponseType"></element>
+    
+    <complexType name="Logout_ResponseType">
+    	<sequence>
+    		<element name="User_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Status" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Res_Message" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="CreateSession_Request"
+    	type="tns:CreateSession_RequestType">
+    </element>
+    
+    <complexType name="CreateSession_RequestType">
+    	<sequence>
+    		<element name="Customer_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Req_TimeStamp" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Transation_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="CreateSession_Response"
+    	type="tns:CreateSession_ResponseType">
+    </element>
+    
+    <complexType name="CreateSession_ResponseType">
+    	<sequence>
+    		<element name="Customer_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Req_TimeStamp" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Transaction_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Session_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Res_Message" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="ValidateSession_Request"
+    	type="tns:ValidateSession_RequestType">
+    </element>
+    
+    <complexType name="ValidateSession_RequestType">
+    	<sequence>
+    		<element name="User_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Req_Timestamp" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Transaction_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Session_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="Validatesession_Response"
+    	type="tns:ValidateSession_ResponseType">
+    </element>
+    
+    <complexType name="ValidateSession_ResponseType">
+    	<sequence>
+    		<element name="User_ID" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Session_ID" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Res_Message" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Res_TimeStamp" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AbstractWSDL="http://www.eniquesolutions.com/wsdl/OrderManagement/AbstractWSDL" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:OrderManagement="http://www.example.org/OrderManagement" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_bn6B4A7-Ee2Qx-oMrilvzw" targetNamespace="http://tns.tibco.com/bw/composite/ES_TS_OrderManagement" name="ES_TS_OrderManagement" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_Cl5UwBFVEe2yzrRa1iCEEg" name="OrderManagement" promote="ComponentProcess/OrderManagement">
+    <sca:interface.wsdl xmi:id="_CmH-QBFVEe2yzrRa1iCEEg" interface="http://www.eniquesolutions.com/wsdl/OrderManagement/AbstractWSDL#wsdl.interface(OrderManagement)" scaext:wsdlLocation="../Service%20Descriptors/OrderManagement/OrderManagement.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_4mM30BFcEe2yzrRa1iCEEg" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/970bcfbdd8f44c24bf5bf81bc60c239e/SOAPServiceBinding" portTypeQName="AbstractWSDL:OrderManagement" transportBindingType="JMS" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/ES_TS_OrderManagement/Service%20Descriptors/OrderManagement/OrderManagement.wsdl">
+      <bindingType xmi:id="_4mM30RFcEe2yzrRa1iCEEg"/>
+      <inboundConfiguration xsi:type="axis2:JMSInboundTransportConfiguration" xmi:id="_5XqJ8BFcEe2yzrRa1iCEEg" jmsResource="es_common_model.JMSConnectionResource" destination="e-comm.q" messageType="Text"/>
+      <operationConfiguration xmi:id="_4mM30hFcEe2yzrRa1iCEEg" operationName="CreateOrder" action="CreateOrder" actionNeeded="true">
+        <bindingType xmi:id="_4mM30xFcEe2yzrRa1iCEEg"/>
+        <messageConfiguration xmi:id="_4mM31BFcEe2yzrRa1iCEEg" messageQName="AbstractWSDL:CreateOrderRequest" wsdlLocation="platform:/resource/ES_TS_OrderManagement/Service%20Descriptors/OrderManagement/OrderManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4mM31RFcEe2yzrRa1iCEEg" partName="parameters" partTypeName="OrderManagement:CreateOrder_requestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_4mM31hFcEe2yzrRa1iCEEg" messageQName="AbstractWSDL:CreateOrderResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_OrderManagement/Service%20Descriptors/OrderManagement/OrderManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4mM31xFcEe2yzrRa1iCEEg" partName="parameters" partTypeName="OrderManagement:CreateOrder_responseType"/>
+        </messageConfiguration>
+        <context xmi:id="_4mM38BFcEe2yzrRa1iCEEg">
+          <inputMapping xmi:id="_4mM38RFcEe2yzrRa1iCEEg"/>
+          <outputMapping xmi:id="_4mM38hFcEe2yzrRa1iCEEg" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_4mM32BFcEe2yzrRa1iCEEg" operationName="CancelOrder" action="CancelOrder" actionNeeded="true">
+        <bindingType xmi:id="_4mM32RFcEe2yzrRa1iCEEg"/>
+        <messageConfiguration xmi:id="_4mM32hFcEe2yzrRa1iCEEg" messageQName="AbstractWSDL:CancelOrderRequest" wsdlLocation="platform:/resource/ES_TS_OrderManagement/Service%20Descriptors/OrderManagement/OrderManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4mM32xFcEe2yzrRa1iCEEg" partName="CancelOrderRequest" partTypeName="OrderManagement:CancelOrder_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_4mM33BFcEe2yzrRa1iCEEg" messageQName="AbstractWSDL:CancelOrderResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_OrderManagement/Service%20Descriptors/OrderManagement/OrderManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4mM33RFcEe2yzrRa1iCEEg" partName="CancelOrderResponse" partTypeName="OrderManagement:CancelOrder_ResponseType"/>
+        </messageConfiguration>
+        <context xmi:id="_4mM38xFcEe2yzrRa1iCEEg">
+          <inputMapping xmi:id="_4mM39BFcEe2yzrRa1iCEEg"/>
+          <outputMapping xmi:id="_4mM39RFcEe2yzrRa1iCEEg" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_4mM33hFcEe2yzrRa1iCEEg" operationName="UpdateOrder" action="UpdateOrder" actionNeeded="true">
+        <bindingType xmi:id="_4mM33xFcEe2yzrRa1iCEEg"/>
+        <messageConfiguration xmi:id="_4mM34BFcEe2yzrRa1iCEEg" messageQName="AbstractWSDL:UpdateOrderRequest" wsdlLocation="platform:/resource/ES_TS_OrderManagement/Service%20Descriptors/OrderManagement/OrderManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4mM34RFcEe2yzrRa1iCEEg" partName="UpdateOrderRequest" partTypeName="OrderManagement:UpdateOrder_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_4mM34hFcEe2yzrRa1iCEEg" messageQName="AbstractWSDL:UpdateOrderResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_OrderManagement/Service%20Descriptors/OrderManagement/OrderManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4mM34xFcEe2yzrRa1iCEEg" partName="UpdateOrderResponse" partTypeName="OrderManagement:UpdateOrder_ResponseType"/>
+        </messageConfiguration>
+        <context xmi:id="_4mM39hFcEe2yzrRa1iCEEg">
+          <inputMapping xmi:id="_4mM39xFcEe2yzrRa1iCEEg"/>
+          <outputMapping xmi:id="_4mM3-BFcEe2yzrRa1iCEEg" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_4mM35BFcEe2yzrRa1iCEEg" operationName="GetOrder" action="GetOrder" actionNeeded="true">
+        <bindingType xmi:id="_4mM35RFcEe2yzrRa1iCEEg"/>
+        <messageConfiguration xmi:id="_4mM35hFcEe2yzrRa1iCEEg" messageQName="AbstractWSDL:GetOrderRequest" wsdlLocation="platform:/resource/ES_TS_OrderManagement/Service%20Descriptors/OrderManagement/OrderManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4mM35xFcEe2yzrRa1iCEEg" partName="GetOrderRequest" partTypeName="OrderManagement:GetOrder_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_4mM36BFcEe2yzrRa1iCEEg" messageQName="AbstractWSDL:GetOrderResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_OrderManagement/Service%20Descriptors/OrderManagement/OrderManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4mM36RFcEe2yzrRa1iCEEg" partName="GetOrderResponse" partTypeName="OrderManagement:GetOrder_ResponseType"/>
+        </messageConfiguration>
+        <context xmi:id="_4mM3-RFcEe2yzrRa1iCEEg">
+          <inputMapping xmi:id="_4mM3-hFcEe2yzrRa1iCEEg"/>
+          <outputMapping xmi:id="_4mM3-xFcEe2yzrRa1iCEEg" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_4mM36hFcEe2yzrRa1iCEEg" operationName="GetOrderHistory" action="GetOrderHistory" actionNeeded="true">
+        <bindingType xmi:id="_4mM36xFcEe2yzrRa1iCEEg"/>
+        <messageConfiguration xmi:id="_4mM37BFcEe2yzrRa1iCEEg" messageQName="AbstractWSDL:GetOrderHistoryRequest" wsdlLocation="platform:/resource/ES_TS_OrderManagement/Service%20Descriptors/OrderManagement/OrderManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4mM37RFcEe2yzrRa1iCEEg" partName="GetOrderHistoryRequest" partTypeName="OrderManagement:GetOrderHistory_RequestType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_4mM37hFcEe2yzrRa1iCEEg" messageQName="AbstractWSDL:GetOrderHistoryResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/ES_TS_OrderManagement/Service%20Descriptors/OrderManagement/OrderManagement.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_4mM37xFcEe2yzrRa1iCEEg" partName="GetOrderHistoryResponse" partTypeName="OrderManagement:GetOrderHistory_ResponseType"/>
+        </messageConfiguration>
+        <context xmi:id="_4mM3_BFcEe2yzrRa1iCEEg">
+          <inputMapping xmi:id="_4mM3_RFcEe2yzrRa1iCEEg"/>
+          <outputMapping xmi:id="_4mM3_hFcEe2yzrRa1iCEEg" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_4mM3_xFcEe2yzrRa1iCEEg" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_cIu3AA7-Ee2Qx-oMrilvzw" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cI4A8A7-Ee2Qx-oMrilvzw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cJBx8A7-Ee2Qx-oMrilvzw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cJBx8Q7-Ee2Qx-oMrilvzw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cJMKAA7-Ee2Qx-oMrilvzw" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cJUs4A7-Ee2Qx-oMrilvzw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cJed4A7-Ee2Qx-oMrilvzw" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cJed4Q7-Ee2Qx-oMrilvzw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cJoO4A7-Ee2Qx-oMrilvzw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_b2kI8A7-Ee2Qx-oMrilvzw" name="ComponentProcess" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_b2kI8Q7-Ee2Qx-oMrilvzw" processName="es_ts_ordermanagement.OrderManagement_TS"/>
+    <sca:service xmi:id="_ClqrQBFVEe2yzrRa1iCEEg" name="OrderManagement">
+      <sca:interface.wsdl xmi:id="_ClvjwBFVEe2yzrRa1iCEEg" interface="http://www.eniquesolutions.com/wsdl/OrderManagement/AbstractWSDL#wsdl.interface(OrderManagement)" scaext:wsdlLocation="../Service%20Descriptors/OrderManagement/OrderManagement.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

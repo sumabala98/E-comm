@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.eniquesolutions.com/updatedSchemas" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions.com/updatedSchemas">
+
+    <complexType name="cancelOrderType">
+        <sequence>
+            <element name="orderID" type="string"></element>
+            <element name="userID" type="string"></element>
+        </sequence>
+    </complexType>
+
+    <element name="cancelOrder" type="tns:cancelOrderType"></element>
+
+    <complexType name="getIndividualProdType">
+        <sequence>
+            <element name="prodCode" type="string"></element>
+            <element name="userID" type="string"></element>
+        </sequence>
+    </complexType>
+
+    <element name="getIndividualProd"
+        type="tns:getIndividualProdType">
+    </element>
+
+    <complexType name="getProdByCategoryType">
+        <sequence>
+            <element name="prodCode" type="string"></element>
+            <element name="customerID" type="string"></element>
+        </sequence>
+    </complexType>
+
+    <element name="getProdByCategory" type="tns:getProdByCategoryType"></element>
+
+
+    <complexType name="updateShipmentType">
+        <sequence>
+            <element name="orderID" type="string"></element>
+            <element name="ShipmentStatus" type="string"></element>
+            <element name="customerID" type="string"></element>
+        </sequence>
+    </complexType>
+
+
+    <element name="updateShipment" type="tns:updateShipmentType"></element>
+
+    <complexType name="paymentType">
+        <sequence>
+            <element name="totalAmount" type="double" maxOccurs="1" minOccurs="0"></element>
+            <element name="paymentID" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="orderDetails" type="tns:orderDetailType"
+                minOccurs="0" maxOccurs="unbounded">
+            </element>
+            <element name="AccountDetails"
+                type="tns:AccountDetailsType" maxOccurs="1" minOccurs="0">
+            </element>
+            <element name="customerID" type="string" maxOccurs="1" minOccurs="0"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="orderDetailType">
+        <sequence>
+            <element name="orderID" type="string" maxOccurs="1" minOccurs="1"></element>
+            <element name="Product_Id" type="string" maxOccurs="1" minOccurs="1"></element>
+            <element name="price" type="double" maxOccurs="1" minOccurs="1"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="AccountDetailsType">
+        <sequence>
+            <element name="Account_No" type="string" maxOccurs="1" minOccurs="1"></element>
+            <element name="Account_Holder_Name" type="string" maxOccurs="1" minOccurs="1"></element>
+            <element name="IFSC_Code" type="string" maxOccurs="1" minOccurs="1"></element>
+        </sequence>
+    </complexType>
+
+
+    <element name="payment" type="tns:paymentType"></element>
+
+
+
+    <element name="Payment_response" type="tns:Payment_ResponseType"></element>
+    
+    <complexType name="Payment_ResponseType">
+    	<sequence>
+    		<element name="Res_message" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>

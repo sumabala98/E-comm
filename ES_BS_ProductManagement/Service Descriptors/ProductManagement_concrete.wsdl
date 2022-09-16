@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:jms="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tibex="http://www.tibco.com/bs3.2/extensions" xmlns:tns="http://www.EniqueSolutions.com/ProductManagement/ConcreteWSDL/wc1" xmlns:tns0="http://www.example.org/ProductManagement" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProductManagement" targetNamespace="http://www.EniqueSolutions.com/ProductManagement/ConcreteWSDL/wc1" tibex:src="file:/C:/Suma/TIBCO6Workspace/BW6_Training/MiniProject/Documents/Wsdls/ProductManagement_concrete.wsdl">
+  <wsdl:types>
+    <xsd:schema xmlns:tns="http://www.example.org/ProductManagement" elementFormDefault="qualified" targetNamespace="http://www.example.org/ProductManagement">
+      <xsd:element name="GetAllProducts_Request" type="tns:GetAllProducts_RequestType"/>
+      <xsd:complexType name="GetAllProducts_RequestType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Session_ID" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GetAllProducts_Response" type="tns:GetAllProducts_ResponseType"/>
+      <xsd:complexType name="GetAllProducts_ResponseType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Product" type="tns:ProductType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ResMessage" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GetProductsByCategory_Request" type="tns:GetProductsByCategory_RequestType"/>
+      <xsd:complexType name="GetProductsByCategory_RequestType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CATEGORY_NAME" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GetProductsByCategory_Response" type="tns:GetProductsByCategory_ResponseType"/>
+      <xsd:complexType name="GetProductsByCategory_ResponseType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Product" type="tns:ProductType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ResMsg" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GetIndividualProduct_Request" type="tns:GetIndividualProduct_RequestType"/>
+      <xsd:complexType name="GetIndividualProduct_RequestType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PRODUCT_ID" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="GetIndividualProduct_Response" type="tns:GetIndividualProduct_ResponseType"/>
+      <xsd:complexType name="GetIndividualProduct_ResponseType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Product" type="tns:ProductType"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Res_Message" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AddProducts_Request" type="tns:AddProducts_RequestType"/>
+      <xsd:element name="AddProducts_Response" type="tns:AddProducts_ResponseType"/>
+      <xsd:complexType name="AddProducts_RequestType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Product" type="tns:ProductType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="AddProducts_ResponseType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Res_Message" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="NoOfProducts" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="UpdateProducts_Request" type="tns:UpdateProducts_RequestType"/>
+      <xsd:element name="UpdateProducts_Response" type="tns:UpdateProducts_ResponseType"/>
+      <xsd:complexType name="UpdateProducts_RequestType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Product" type="tns:ProductType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="UpdateProducts_ResponseType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Res_message" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Product_Id" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="DeleteProducts_Request" type="tns:DeleteProducts_RequestType"/>
+      <xsd:element name="DeleteProducts_Response" type="tns:DeleteProducts_ResponseType"/>
+      <xsd:complexType name="DeleteProducts_RequestType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Product_ID" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DeleteProducts_ResponseType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Res_Message" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Product_ID" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Product" type="tns:ProductType"/>
+      <xsd:complexType name="ProductType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PRODUCT_ID" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="PRODUCT_NAME" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="BRAND_ID" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="CATEGORY_ID" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="MODEL_YEAR" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="LIST_PRICE" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Product_ID" type="tns:Product_IDType"/>
+      <xsd:complexType name="Product_IDType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Product_ID" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AddIndividualProduct_Request" type="tns:AddIndividualProduct_RequestType"/>
+      <xsd:complexType name="AddIndividualProduct_RequestType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="unbounded" minOccurs="0" name="Product" type="tns:ProductType"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="AddIndividualProduct_response" type="tns:AddIndividualProduct_ResponseType"/>
+      <xsd:complexType name="AddIndividualProduct_ResponseType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="ResMessage" type="xsd:string"/>
+          <xsd:element maxOccurs="1" minOccurs="0" name="Product_Id" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="FileContent" type="tns:FileContentType"/>
+      <xsd:complexType name="FileContentType">
+        <xsd:sequence>
+          <xsd:element maxOccurs="1" minOccurs="0" name="FileContent" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="operationRequest">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="operationRequest1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="operationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddIndividualProductRequest">
+    <wsdl:part name="parameters" type="tns0:AddIndividualProduct_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="AddIndividualProductResponse">
+    <wsdl:part name="parameters" type="tns0:AddIndividualProduct_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="AddProductRequest">
+    <wsdl:part name="AddProductRequest" type="tns0:AddProducts_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="AddProductResponse">
+    <wsdl:part name="AddProductResponse" type="tns0:AddProducts_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteProductRequest">
+    <wsdl:part name="DeleteProductRequest" type="tns0:DeleteProducts_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="DeleteProductResponse">
+    <wsdl:part name="DeleteProductResponse" type="tns0:DeleteProducts_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsRequest">
+    <wsdl:part name="GetAllProductsRequest" type="tns0:GetAllProducts_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="GetAllProductsResponse">
+    <wsdl:part name="GetAllProductsResponse" type="tns0:GetAllProducts_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="GetIndividualProductRequest">
+    <wsdl:part name="GetIndividualProductRequest" type="tns0:GetIndividualProduct_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="GetIndividualProductResponse">
+    <wsdl:part name="GetIndividualProductResponse" type="tns0:GetIndividualProduct_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductsByCategoryRequest">
+    <wsdl:part name="GetProductsByCategoryRequest" type="tns0:GetProductsByCategory_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="GetProductsByCategoryResponse">
+    <wsdl:part name="GetProductsByCategoryResponse" type="tns0:GetProductsByCategory_ResponseType"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateProductRequest">
+    <wsdl:part name="UpdateProductRequest" type="tns0:UpdateProducts_RequestType"/>
+  </wsdl:message>
+  <wsdl:message name="UpdateProductResponse">
+    <wsdl:part name="UpdateProductResponse" type="tns0:UpdateProducts_ResponseType"/>
+  </wsdl:message>
+  <wsdl:portType name="ProductManagement">
+    <wsdl:operation name="AddIndividualProduct">
+      <wsdl:input message="tns:AddIndividualProductRequest"/>
+      <wsdl:output message="tns:AddIndividualProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <wsdl:input message="tns:AddProductRequest"/>
+      <wsdl:output message="tns:AddProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <wsdl:input message="tns:DeleteProductRequest"/>
+      <wsdl:output message="tns:DeleteProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <wsdl:input message="tns:GetAllProductsRequest"/>
+      <wsdl:output message="tns:GetAllProductsResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndividualProduct">
+      <wsdl:input message="tns:GetIndividualProductRequest"/>
+      <wsdl:output message="tns:GetIndividualProductResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByCategory">
+      <wsdl:input message="tns:GetProductsByCategoryRequest"/>
+      <wsdl:output message="tns:GetProductsByCategoryResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input message="tns:UpdateProductRequest"/>
+      <wsdl:output message="tns:UpdateProductResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAPServiceBinding" type="tns:ProductManagement">
+    <soap:binding style="document" transport="http://www.tibco.com/namespaces/ws/2004/soap/binding/JMS"/>
+    <jms:binding messageFormat="text"/>
+    <wsdl:operation name="AddIndividualProduct">
+      <soap:operation soapAction="AddIndividualProduct" style="document"/>
+      <wsdl:input>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="parameters" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProduct">
+      <soap:operation soapAction="AddProduct" style="document"/>
+      <wsdl:input>
+        <soap:body parts="AddProductRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="AddProductResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProduct">
+      <soap:operation soapAction="DeleteProduct" style="document"/>
+      <wsdl:input>
+        <soap:body parts="DeleteProductRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="DeleteProductResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap:operation soapAction="GetAllProducts" style="document"/>
+      <wsdl:input>
+        <soap:body parts="GetAllProductsRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="GetAllProductsResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndividualProduct">
+      <soap:operation soapAction="GetIndividualProduct" style="document"/>
+      <wsdl:input>
+        <soap:body parts="GetIndividualProductRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="GetIndividualProductResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductsByCategory">
+      <soap:operation soapAction="GetProductsByCategory" style="document"/>
+      <wsdl:input>
+        <soap:body parts="GetProductsByCategoryRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="GetProductsByCategoryResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="UpdateProduct" style="document"/>
+      <wsdl:input>
+        <soap:body parts="UpdateProductRequest" use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body parts="UpdateProductResponse" use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProductManagement">
+    <wsdl:port binding="tns:SOAPServiceBinding" name="ProductManagementSOAP">
+      <soap:address location=""/>
+      <jms:connectionFactory/>
+      <jms:targetAddress destination="queue">e-comm.q</jms:targetAddress>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,104 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "ShipmentManagement",
+    "description" : "ShipmentManagement service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/UpdateShipment" : {
+      "put" : {
+        "summary" : "putShipmentManagement",
+        "description" : "putShipmentManagement",
+        "operationId" : "put-UpdateShipment",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/UpdateShipment_Request"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a UpdateShipment_Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/UpdateShipment_Response"
+            }
+          }
+        }
+      }
+    },
+    "/TrackShipment" : {
+      "get" : {
+        "summary" : "getShipmentManagement",
+        "description" : "getShipmentManagement",
+        "operationId" : "get-TrackShipment",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "ORDER_ID",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a TrackingShipment_Response to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/TrackingShipment_Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "UpdateShipment_Response" : {
+      "type" : "object",
+      "properties" : {
+        "ORDER_ID" : {
+          "type" : "string"
+        },
+        "Res_Message" : {
+          "type" : "string"
+        }
+      }
+    },
+    "UpdateShipment_Request" : {
+      "type" : "object",
+      "properties" : {
+        "ORDER_ID" : {
+          "type" : "string"
+        },
+        "ORDER_STATUS" : {
+          "type" : "string"
+        },
+        "Session_id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "TrackingShipment_Response" : {
+      "type" : "object",
+      "properties" : {
+        "ORDER_ID" : {
+          "type" : "string"
+        },
+        "Res_Message" : {
+          "type" : "string"
+        },
+        "ORDER_STATUS" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

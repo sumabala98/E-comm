@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/Sessions" xmlns:tns="http://www.example.org/Sessions" elementFormDefault="qualified">
+
+    <element name="Session_ID" type="tns:Session_IDType"></element>
+    
+    <complexType name="Session_IDType">
+    	<sequence>
+    		<element name="Session_ID" type="string" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+</schema>
